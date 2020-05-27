@@ -1,0 +1,20 @@
+
+________________________________________________________________________________________________________
+Via Composer Create-Project
+Alternatively, you may also install Laravel by issuing the Composer create-project command in your terminal:
+
+composer create-project --prefer-dist laravel/laravel blog
+
+Установка Laravel E
+_____________________________________________________________________________________________________
+
+ Урок 2
+ Установка helper
+1. composer require --dev barryvdh/laravel-ide-helper
+
+___________________________________________________________________________________________________
+Установка debugbar
+2. composer require barryvdh/laravel-debugbar --dev
+
+____________________________________________________________________________________________________
+3. php composer.phar update
