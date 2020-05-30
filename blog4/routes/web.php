@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+  // Route::get('/', 'WelcomeController@index');
+
+Route::resource('rest', 'RestTestController')->names('restTest');
+
+// проект blog.post
+Route::group(['namespace' => 'Blog', 'prefix' => 'blog'], function () {
+    Route::resource('posts', 'PostController')->names('blog.posts');
+});

@@ -23,3 +23,33 @@ ________________________________________________________________________________
 
 4. php artisan make:model Models/BlogCategory -m
 5. php artisan make:model Models/BlogPost -m
+
+Урок 5
+6. php artisan migrate
+ или
+7. php artisan migrate:refresh
+
+
+
+Урок 6-7
+
+5. php artisan make:seeder UsersTableSeeder
+6. php artisan make:seeder BlogCategoriesTableSeeder
+7. php artisan make:factory BlogPostFactory
+8. composer dump-autoload
+
+ Решение проблемы с
+     ( Target class [UsersTableSeeder] does not exist.) 1.txt
+      use Illuminate\Support\Str;-без строки не работает
+__________________________________________________________________________________
+9. php artisan db:seed
+8!. php artisan db:seed --ClassUsersTableSeeder
+9!. php artisan migrate:refresh --seed
+__________________________________________________________________________________
+
+Урок 8
+10. php artisan make:controller RestTestController --resource
+
+Урок 9-10.
+11. php artisan make:controller Blog/BaseController
+12. php artisan make:controller Blog/PostController --resource
