@@ -53,3 +53,12 @@ ________________________________________________________________________________
 Урок 9-10.
 11. php artisan make:controller Blog/BaseController
 12. php artisan make:controller Blog/PostController --resource
+
+  Урок 12 Контролер управления категориями
+19. php artisan make:controller Blog/Admin/CategoryController --resource
+20. php artisan route:list > routes.txt
+
+ Урок 13 Контролер управления категориями
+ php artisan make:controller Blog/Admin/BaseController
+
+ Урок 14 Вівод всех категорий.
