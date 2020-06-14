@@ -5,7 +5,7 @@
 
 @section('content')
 
-    @php /** @var \App\Models\BlogCategory $item */ @endphp
+    @php /** @var BlogCategory $item */use App\Models\BlogCategory; @endphp
 
     @if($item->exists)
 
@@ -37,6 +37,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-md-11">
                                     <div class="alert alert-success" role="alert">
+                                        Успешно сохранено!
                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                             <span aria-hidden="true"></span>
                                         </button>

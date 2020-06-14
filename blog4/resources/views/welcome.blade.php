@@ -87,14 +87,36 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">Документация</a>
                     <a href="blog/posts">Посты</a>
-                    <a href="https://laravel-news.com">News</a>
+                    <a href="admin/blog/categories">Категории</a>
                     <a href="https://blog.laravel.com">Blog</a>
                     <a href="https://nova.laravel.com">Nova</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+                <button onclick="send();">Send</button>
             </div>
         </div>
+
+    <script>
+        var conn = new WebSocket('ws://localhost:8080');
+        conn.onopen = function (e) {
+    console.log("Connection established");
+        };
+
+        conn.onmessage = function (e) {
+            console.log('Получены данные ' + e.data);
+
+        };
+
+        function send()
+        {
+            var data = 'Данные для отправки: ' + Math.random();
+            conn.send(data);
+            console.log('Отправлено ' + data);
+
+
+        }
+    </script>
     </body>
 </html>

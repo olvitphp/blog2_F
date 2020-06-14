@@ -1,6 +1,6 @@
 @php
-/** @var \App\Models\BlogCategory $item  */use Illuminate\Support\Collection;
-/** @var Collection $categoryList  */
+    /** @var BlogCategory $item  */use App\Models\BlogCategory;use Illuminate\Support\Collection;
+    /** @var Collection $categoryList  */
 
 @endphp
 <div class="row justify-content-center">
@@ -22,8 +22,8 @@
 
                             <label for="title">Заголовок </label>
                             <input name="title" value="{{$item->title}}"
-                            id="title"
-                            type="text"
+                                   id="title"
+                                   type="text"
                                    class="form-control"
                                    minlength="3"
                                    required>
@@ -32,31 +32,55 @@
                         <div class="form-group">
                             <label for="slug">Идентификатор</label>
                             <input name="slug" value="{{$item->slug}}"
-                            id="slug"
+                                   id="slug"
                                    type="text"
                                    class="form-control">
 
                         </div>
                         <div class="form-group">
                             <label for="parent_id">Родитель</label>
-                                <select name="parent_id"
-                                        id="parent_id"
-                                        class="form-control"
-                                        placeholder="Выберете категорию"
-                                        required>
+                            <select name="parent_id"
+                                    id="parent_id"
+                                    class="form-control"
+                                    placeholder="Выберете категорию"
+                                    required>
 
-                                    @foreach($categoryList as $categoryOption)
-                                        <option value="{{$categoryOption->id}}"
-                                                @if($categoryOption->id == $item->parent_id) selected @endif>
-{{--                                            {{ $categoryOption->id }}. {{$categoryOption->title}}--}}
-                                            {{ $categoryOption->id_title }}
-                                        </option>
-                                    @endforeach
+
+
+                                @foreach($categoryList as $categoryOption)
+                                    <option value="{{$categoryOption->id}}"
+                                            @if($categoryOption->id == $item->parent_id) selected @endif>
+                                        {{ $categoryOption->id }}. {{$categoryOption->title}}
+                                        {{--                                            {{ $categoryOption->id_title }}--}}
+                                    </option>
+                                @endforeach
+
+
 
                             </select>
-
-
                         </div>
+{{--                        <div class="form-group">--}}
+{{--                            <label for="parent_id">Автор</label>--}}
+{{--                            <select name="parent_id"--}}
+{{--                                    id="parent_id"--}}
+{{--                                    class="form-control"--}}
+{{--                                    placeholder="Выберете категорию"--}}
+{{--                                    required>--}}
+
+
+
+
+{{--                                @foreach($categoryUser as $user)--}}
+{{--                                    <option value="{{$user->id}}"--}}
+{{--                                            @if($user->id == $user_create->id) selected @endif>--}}
+{{--                                        {{ $user->id }}. {{$user->name}} _ {{$user->email}}--}}
+{{--                                        --}}{{--                                            {{ $categoryOption->id_title }}--}}
+{{--                                    </option>--}}
+{{--                                @endforeach--}}
+
+{{--                            </select>--}}
+
+{{--                        </div>--}}
                         <div class="form-group">
                             <label for="description"> Описание</label>
                             <textarea name="description",
