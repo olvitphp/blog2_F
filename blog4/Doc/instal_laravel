@@ -71,3 +71,8 @@ Laravel урок №21: [ Валидация данных ]
 Laravel урок №22: [ Валидация данных 2. Продолжение ]
 
 21. php artisan make:request BlogCategoryUpdateRequest
+
+Laravel урок №23: [ Добавление категории (insert, create) ]
+
+22. php artisan migrate:refresh --seed
+23. php artisan make:request BlogCategoryCreateRequest
